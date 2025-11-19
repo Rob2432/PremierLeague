@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./CreatePostForm.css";
 
 export default function CreatePostForm({ onCreatePost }) {
   const [title, setTitle] = useState("");
