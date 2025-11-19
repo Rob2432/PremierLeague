@@ -1,5 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import "./PostPage.css";
 
 export default function PostPage({ posts, onUpvote, onEdit, onDelete }) {
   const { id } = useParams();
@@ -14,7 +15,6 @@ export default function PostPage({ posts, onUpvote, onEdit, onDelete }) {
 
   if (!post) return <p>Post not found!</p>;
 
-  // Add comment to post
   const handleAddComment = () => {
     if (!commentText.trim()) return;
 
@@ -30,7 +30,6 @@ export default function PostPage({ posts, onUpvote, onEdit, onDelete }) {
     setCommentText("");
   };
 
-  // Save edited post
   const handleSaveEdit = () => {
     onEdit(post.id, {
       title: editTitle,
@@ -40,173 +39,97 @@ export default function PostPage({ posts, onUpvote, onEdit, onDelete }) {
     setIsEditing(false);
   };
 
-  // Delete post and navigate back to home
   const handleDelete = () => {
     onDelete(post.id);
     navigate("/");
   };
 
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-      <button
-        onClick={() => navigate(-1)}
-        style={{ marginBottom: "20px", padding: "6px 12px", borderRadius: "6px" }}
-      >
+    <div className="post-page-container">
+      <button className="back-button" onClick={() => navigate(-1)}>
         ← Back
       </button>
 
-      {isEditing ? (
-        <div>
-          <input
-            value={editTitle}
-            onChange={(e) => setEditTitle(e.target.value)}
-            style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-          />
-          <textarea
-            value={editContent}
-            onChange={(e) => setEditContent(e.target.value)}
-            style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-          />
-          <input
-            value={editImageUrl}
-            onChange={(e) => setEditImageUrl(e.target.value)}
-            style={{ width: "100%", padding: "10px", marginBottom: "10px" }}
-          />
-          <button
-            onClick={handleSaveEdit}
-            style={{
-              padding: "10px 20px",
-              marginRight: "10px",
-              background: "#37003c",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
-          >
-            Save
-          </button>
-          <button
-            onClick={() => setIsEditing(false)}
-            style={{
-              padding: "10px 20px",
-              background: "#999",
-              color: "white",
-              border: "none",
-              borderRadius: "6px",
-              cursor: "pointer",
-            }}
-          >
-            Cancel
-          </button>
-        </div>
-      ) : (
-        <div>
-          <h1 style={{ color: "#37003c" }}>{post.title}</h1>
-          {post.content && <p>{post.content}</p>}
-          {post.imageUrl && (
-            <img
-              src={post.imageUrl}
-              alt="Post"
-              style={{ maxWidth: "100%", borderRadius: "8px", marginTop: "10px" }}
+      <div className="post-card-container">
+        {isEditing ? (
+          <div>
+            <input
+              className="edit-input"
+              value={editTitle}
+              onChange={(e) => setEditTitle(e.target.value)}
             />
-          )}
-          <p style={{ color: "#1a1a1a", marginTop: "10px" }}>
-            Created: {new Date(post.createdAt).toLocaleString()}
-          </p>
-          <p style={{ color: "#00ff87", fontWeight: "bold" }}>Upvotes: {post.upvotes}</p>
-
-          <button
-            onClick={() => onUpvote(post.id)}
-            style={{
-              marginTop: "10px",
-              padding: "10px 20px",
-              background: "#37003c",
-              color: "white",
-              border: "none",
-              borderRadius: "8px",
-              cursor: "pointer",
-            }}
-          >
-            Upvote
-          </button>
-
-          <div style={{ marginTop: "20px" }}>
-            <button
-              onClick={() => setIsEditing(true)}
-              style={{
-                padding: "8px 16px",
-                marginRight: "10px",
-                background: "#00ff87",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-              }}
-            >
-              Edit Post
+            <textarea
+              className="edit-textarea"
+              value={editContent}
+              onChange={(e) => setEditContent(e.target.value)}
+            />
+            <input
+              className="edit-input"
+              value={editImageUrl}
+              onChange={(e) => setEditImageUrl(e.target.value)}
+            />
+            <button className="save-button" onClick={handleSaveEdit}>
+              Save
             </button>
             <button
-              onClick={handleDelete}
-              style={{
-                padding: "8px 16px",
-                background: "#ff4d4d",
-                border: "none",
-                borderRadius: "6px",
-                cursor: "pointer",
-                color: "white",
-              }}
+              className="cancel-button"
+              onClick={() => setIsEditing(false)}
             >
-              Delete Post
+              Cancel
             </button>
           </div>
-        </div>
-      )}
+        ) : (
+          <div>
+            <h1 className="post-title">{post.title}</h1>
+            {post.content && <p className="post-content">{post.content}</p>}
+            {post.imageUrl && (
+              <img src={post.imageUrl} alt="Post" className="post-image" />
+            )}
+            <p className="post-meta">
+              Created: {new Date(post.createdAt).toLocaleString()}
+            </p>
+            <p className="upvotes">Upvotes: {post.upvotes}</p>
 
-      {/* Comments Section */}
-      <div style={{ marginTop: "30px" }}>
-        <h2 style={{ color: "#37003c" }}>Comments</h2>
+            <button
+              className="upvote-button"
+              onClick={() => onUpvote(post.id)}
+            >
+              Upvote
+            </button>
 
+            <div style={{ marginTop: "20px" }}>
+              <button
+                className="edit-button"
+                onClick={() => setIsEditing(true)}
+              >
+                Edit Post
+              </button>
+              <button className="delete-button" onClick={handleDelete}>
+                Delete Post
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <div className="comment-section">
+        <h2>Comments</h2>
         <textarea
+          className="comment-input"
           value={commentText}
           onChange={(e) => setCommentText(e.target.value)}
           placeholder="Add a comment..."
-          style={{
-            width: "100%",
-            padding: "10px",
-            borderRadius: "6px",
-            border: "2px solid #37003c",
-            marginBottom: "10px",
-          }}
         />
-
-        <button
-          onClick={handleAddComment}
-          style={{
-            padding: "8px 16px",
-            background: "#37003c",
-            color: "white",
-            border: "none",
-            borderRadius: "6px",
-            cursor: "pointer",
-          }}
-        >
+        <button className="comment-button" onClick={handleAddComment}>
           Post Comment
         </button>
 
         {post.comments && post.comments.length > 0 && (
           <div style={{ marginTop: "20px" }}>
             {post.comments.map((comment) => (
-              <div
-                key={comment.id}
-                style={{
-                  borderBottom: "1px solid #ccc",
-                  padding: "10px 0",
-                }}
-              >
+              <div key={comment.id} className="comment-item">
                 <p>{comment.text}</p>
-                <small style={{ color: "#1a1a1a" }}>
-                  {new Date(comment.createdAt).toLocaleString()}
-                </small>
+                <small>{new Date(comment.createdAt).toLocaleString()}</small>
               </div>
             ))}
           </div>

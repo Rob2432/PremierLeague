@@ -145,4 +145,159 @@
   .comment-item small {
     color: #1a1a1a;
   }
+
+  /* Comments Section */
+.comment-section {
+    margin-top: 30px;
+  }
   
+  .comment-section h2 {
+    color: #37003c;
+    margin-bottom: 15px;
+  }
+  
+  .comment-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid #37003c;
+    margin-bottom: 10px;
+    resize: none;
+    font-size: 1rem;
+  }
+  
+  .comment-button {
+    background-color: #37003c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .comment-button:hover {
+    background-color: #4b0061;
+  }
+  
+  /* Individual comment cards */
+  .comment-item {
+    background-color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 12px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  .comment-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  }
+  
+  .comment-item p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #111827;
+  }
+  
+  .comment-item small {
+    display: block;
+    color: #6b7280; /* gray-500 */
+    margin-top: 4px;
+    font-size: 0.8rem;
+  }
+  
+  /* Upvotes */
+  .upvotes {
+    display: inline-block;
+    background-color: #e5ffe6;
+    color: #00bb55;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+  }
+  
+  .upvote-button {
+    display: block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #37003c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .upvote-button:hover {
+    background-color: #4b0061;
+  }
+/* Post content card */
+.post-card-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    margin-bottom: 20px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  .post-card-container:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  }
+  
+  .post-title {
+    color: #37003c;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .post-content {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #111827;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    border-radius: 12px;
+    margin-top: 10px;
+  }
+  
+  .post-meta {
+    color: #6b7280; /* gray-500 */
+    margin-top: 10px;
+    font-size: 0.85rem;
+  }
+  
+  /* Edit mode inputs styled as card fields */
+  .edit-input,
+  .edit-textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #37003c;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+  
+  .edit-textarea {
+    resize: none;
+  }
+  
+  /* Buttons already styled previously remain consistent */
+  .save-button,
+  .cancel-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+  }
+    
