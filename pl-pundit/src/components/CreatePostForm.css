@@ -1,68 +1,65 @@
 .create-post-form {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 24px;
-    max-width: 480px;
-    margin: 20px auto;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
-    border-top: 6px solid #37003c; /* Premier League purple */
-    font-family: Arial, sans-serif;
-  }
-  
-  .create-post-form h2 {
-    margin-bottom: 15px;
-    color: #37003c;
-    font-size: 24px;
-    text-align: center;
-  }
-  
-  .create-post-form label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    font-weight: bold;
-    color: #37003c;
-  }
-  
-  .create-post-form input,
-  .create-post-form textarea {
-    width: 100%;
-    padding: 10px;
-    border: 2px solid #37003c;
-    border-radius: 6px;
-    font-size: 16px;
-    outline: none;
-    transition: border 0.2s ease;
-  }
-  
-  .create-post-form input:focus,
-  .create-post-form textarea:focus {
-    border-color: #00ff87; /* Premier League neon green */
-  }
-  
-  .create-post-form textarea {
-    height: 100px;
-    resize: none;
-  }
-  
-  .create-post-form button {
-    margin-top: 18px;
-    width: 100%;
-    padding: 12px;
-    background: #37003c;
-    color: white;
-    font-size: 18px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.2s ease, transform 0.1s ease;
-  }
-  
-  .create-post-form button:hover {
-    background: #4f0357;
-  }
-  
-  .create-post-form button:active {
-    transform: scale(0.97);
-  }
-  
+  background-color: #ffffff;
+  padding: 25px 30px;
+  margin-bottom: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.create-post-form:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+.create-post-form h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #4f46e5;
+  font-weight: 700;
+  text-align: center;
+}
+
+.create-post-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.create-post-form input,
+.create-post-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.create-post-form input:focus,
+.create-post-form textarea:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.3);
+}
+
+.create-post-form button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: #4f46e5;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.create-post-form button:hover {
+  background: #6366f1;
+  transform: translateY(-2px);
+}

@@ -1,0 +1,148 @@
+.post-page-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9fafb;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  }
+  
+  .back-button {
+    margin-bottom: 20px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    background-color: #eee;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #ddd;
+  }
+  
+  .post-title {
+    color: #37003c;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .post-content {
+    font-size: 1rem;
+    margin-bottom: 15px;
+    color: #111827;
+  }
+  
+  .post-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+  
+  .post-meta {
+    color: #1a1a1a;
+    margin-top: 10px;
+  }
+  
+  .upvotes {
+    color: #00ff87;
+    font-weight: bold;
+  }
+  
+  .upvote-button,
+  .edit-button,
+  .delete-button,
+  .save-button,
+  .cancel-button,
+  .comment-button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .upvote-button {
+    background-color: #37003c;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  .upvote-button:hover {
+    background-color: #4b0061;
+  }
+  
+  .edit-button {
+    background-color: #00ff87;
+    margin-right: 10px;
+  }
+  
+  .edit-button:hover {
+    background-color: #00cc6f;
+  }
+  
+  .delete-button {
+    background-color: #ff4d4d;
+    color: white;
+  }
+  
+  .delete-button:hover {
+    background-color: #e60000;
+  }
+  
+  .save-button {
+    background-color: #37003c;
+    color: white;
+    margin-right: 10px;
+  }
+  
+  .save-button:hover {
+    background-color: #4b0061;
+  }
+  
+  .cancel-button {
+    background-color: #999;
+    color: white;
+  }
+  
+  .cancel-button:hover {
+    background-color: #777;
+  }
+  
+  .comment-section {
+    margin-top: 30px;
+  }
+  
+  .comment-section h2 {
+    color: #37003c;
+    margin-bottom: 10px;
+  }
+  
+  .comment-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 2px solid #37003c;
+    margin-bottom: 10px;
+    resize: none;
+  }
+  
+  .comment-button {
+    background-color: #37003c;
+    color: white;
+  }
+  
+  .comment-button:hover {
+    background-color: #4b0061;
+  }
+  
+  .comment-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+  }
+  
+  .comment-item small {
+    color: #1a1a1a;
+  }
+  
