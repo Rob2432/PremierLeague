@@ -1,36 +1,32 @@
 import { useState } from "react";
 import CreatePostForm from "./components/CreatePostForm";
+import PostCard from "./components/PostCard";
 
 function App() {
   const [posts, setPosts] = useState([]);
 
   const addPost = (newPost) => {
-    setPosts([newPost, ...posts]); // add newest post to top
+    // Add upvotes property by default
+    setPosts([{ ...newPost, upvotes: 0 }, ...posts]);
+  };
+
+  const handlePostClick = (postId) => {
+    alert(`Post clicked! ID: ${postId}`);
+    // Later: navigate to PostPage using React Router
   };
 
   return (
-    <div className="App">
-      <h1>PL Pundits</h1>
+    <div className="App" style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
+      <h1 style={{ textAlign: "center", color: "#37003c" }}>PL Pundits</h1>
 
       <CreatePostForm onCreatePost={addPost} />
 
-      <h2>Posts</h2>
+      <h2 style={{ color: "#37003c", marginTop: "30px" }}>Home Feed</h2>
       {posts.length === 0 ? (
         <p>No posts yet.</p>
       ) : (
         posts.map((post) => (
-          <div
-            key={post.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "10px",
-              marginBottom: "10px",
-            }}
-          >
-            <h3>{post.title}</h3>
-            <p>Created: {new Date(post.createdAt).toLocaleString()}</p>
-            <p>Upvotes: {post.upvotes}</p>
-          </div>
+          <PostCard key={post.id} post={post} onClick={handlePostClick} />
         ))
       )}
     </div>
@@ -38,4 +34,3 @@ function App() {
 }
 
 export default App;
-
