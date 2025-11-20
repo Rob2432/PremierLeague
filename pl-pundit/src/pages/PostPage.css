@@ -1,55 +1,17 @@
 .post-page-container {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 95%;           /* use most of the screen width */
+    max-width: 1000px;    /* optional max width for readability */
+    margin: 20px auto;    /* center horizontally with top/bottom margin */
+    padding: 25px;
     font-family: 'Inter', sans-serif;
     background-color: #f9fafb;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    box-sizing: border-box; /* include padding in width */
   }
   
-  .back-button {
-    margin-bottom: 20px;
-    padding: 6px 12px;
-    border-radius: 6px;
-    border: none;
-    background-color: #eee;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .back-button:hover {
-    background-color: #ddd;
-  }
-  
-  .post-title {
-    color: #37003c;
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-  
-  .post-content {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    color: #111827;
-  }
-  
-  .post-image {
-    max-width: 100%;
-    border-radius: 8px;
-    margin-top: 10px;
-  }
-  
-  .post-meta {
-    color: #1a1a1a;
-    margin-top: 10px;
-  }
-  
-  .upvotes {
-    color: #00ff87;
-    font-weight: bold;
-  }
-  
+  /* Buttons */
+  .back-button,
   .upvote-button,
   .edit-button,
   .delete-button,
@@ -61,6 +23,15 @@
     border: none;
     cursor: pointer;
     transition: all 0.2s ease;
+  }
+  
+  .back-button {
+    margin-bottom: 20px;
+    background-color: #eee;
+  }
+  
+  .back-button:hover {
+    background-color: #ddd;
   }
   
   .upvote-button {
@@ -116,43 +87,6 @@
   
   .comment-section h2 {
     color: #37003c;
-    margin-bottom: 10px;
-  }
-  
-  .comment-input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 2px solid #37003c;
-    margin-bottom: 10px;
-    resize: none;
-  }
-  
-  .comment-button {
-    background-color: #37003c;
-    color: white;
-  }
-  
-  .comment-button:hover {
-    background-color: #4b0061;
-  }
-  
-  .comment-item {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-  }
-  
-  .comment-item small {
-    color: #1a1a1a;
-  }
-
-  /* Comments Section */
-.comment-section {
-    margin-top: 30px;
-  }
-  
-  .comment-section h2 {
-    color: #37003c;
     margin-bottom: 15px;
   }
   
@@ -164,16 +98,12 @@
     margin-bottom: 10px;
     resize: none;
     font-size: 1rem;
+    box-sizing: border-box;
   }
   
   .comment-button {
     background-color: #37003c;
     color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
   }
   
   .comment-button:hover {
@@ -208,48 +138,7 @@
     font-size: 0.8rem;
   }
   
-  /* Upvotes */
-  .upvotes {
-    display: inline-block;
-    background-color: #e5ffe6;
-    color: #00bb55;
-    font-weight: bold;
-    padding: 4px 12px;
-    border-radius: 20px;
-    margin-top: 10px;
-    font-size: 0.9rem;
-  }
-  
-  .upvote-button {
-    display: block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #37003c;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-  
-  .upvote-button:hover {
-    background-color: #4b0061;
-  }
-/* Post content card */
-.post-card-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-    margin-bottom: 20px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-  
-  .post-card-container:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  }
-  
+  /* Post content */
   .post-title {
     color: #37003c;
     font-size: 2rem;
@@ -274,7 +163,7 @@
     font-size: 0.85rem;
   }
   
-  /* Edit mode inputs styled as card fields */
+  /* Edit mode inputs */
   .edit-input,
   .edit-textarea {
     width: 100%;
@@ -290,14 +179,46 @@
     resize: none;
   }
   
-  /* Buttons already styled previously remain consistent */
-  .save-button,
-  .cancel-button {
-    padding: 10px 20px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
+  /* Upvotes badge */
+  .upvotes {
+    display: inline-block;
+    background-color: #e5ffe6;
+    color: #00bb55;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
     margin-top: 10px;
-    transition: all 0.2s ease;
+    font-size: 0.9rem;
   }
-    
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .post-page-container {
+      width: 95%;
+      padding: 20px;
+    }
+  
+    .post-title {
+      font-size: 1.5rem;
+    }
+  
+    .post-content {
+      font-size: 0.95rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .post-page-container {
+      width: 98%;
+      padding: 15px;
+    }
+  
+    .post-title {
+      font-size: 1.25rem;
+    }
+  
+    .post-content {
+      font-size: 0.9rem;
+    }
+  }
+  

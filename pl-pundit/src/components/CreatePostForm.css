@@ -1,10 +1,12 @@
 .create-post-form {
   background-color: #ffffff;
   padding: 25px 30px;
-  margin-bottom: 30px;
+  margin: 20px auto 30px auto; /* center horizontally */
   border-radius: 16px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
+  max-width: 800px; /* keeps form readable on large screens */
+  width: 90%; /* makes it expand on smaller screens */
 }
 
 .create-post-form:hover {
@@ -64,3 +66,10 @@
   transform: translateY(-2px);
 }
 
+/* Optional: make form fully responsive on very small screens */
+@media (max-width: 480px) {
+  .create-post-form {
+    padding: 20px;
+    width: 95%;
+  }
+}
