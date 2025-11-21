@@ -13,10 +13,10 @@ function Home({ posts, addPost }) {
 
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <h1 style={{ textAlign: "center", color: "#37003c" }}>PL Pundits</h1>
+      <h1 style={{ textAlign: "center", color: "white" }}>PL Pundits</h1>
 
       {/* Home Feed first */}
-      <h2 style={{ color: "#37003c", marginTop: "30px" }}>Home Feed</h2>
+      <h2 style={{ color: "white", marginTop: "30px" }}>Home Feed</h2>
       {posts.length === 0 ? (
         <p>No posts yet.</p>
       ) : (
@@ -32,6 +32,7 @@ function Home({ posts, addPost }) {
           borderTop: "2px solid #e5e7eb",
           margin: "40px 0",
           borderRadius: "4px",
+          width: "500%",
         }}
       />
 

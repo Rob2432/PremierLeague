@@ -1,13 +1,12 @@
 .post-page-container {
-    width: 95%;           /* use most of the screen width */
-    max-width: 1000px;    /* optional max width for readability */
-    margin: 20px auto;    /* center horizontally with top/bottom margin */
+    width: 500%;              
+    margin: 20px auto;   
     padding: 25px;
     font-family: 'Inter', sans-serif;
     background-color: #f9fafb;
     border-radius: 16px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-    box-sizing: border-box; /* include padding in width */
+    box-sizing: border-box; 
   }
   
   /* Buttons */
@@ -27,7 +26,7 @@
   
   .back-button {
     margin-bottom: 20px;
-    background-color: #eee;
+    background-color: black;
   }
   
   .back-button:hover {
@@ -118,6 +117,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     margin-bottom: 12px;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
+    width: 60%;
   }
   
   .comment-item:hover {
